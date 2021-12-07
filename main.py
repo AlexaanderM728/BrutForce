@@ -1,6 +1,6 @@
 from Crypto.Util.Padding import pad
 from Crypto.Cipher import DES
-key = b'kurwaaaa'
+key = b'passpass'
 
 BLOCK_SIZE = 32
 
