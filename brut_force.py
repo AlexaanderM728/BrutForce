@@ -1,3 +1,4 @@
+# Zuzanna Borkowska (s21243) Aleksander Mazurek (s15230)
 import random
 from Crypto.Cipher import DES
 
