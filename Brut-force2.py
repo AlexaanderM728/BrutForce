@@ -20,7 +20,7 @@ def stop(key, text):
     sys.exit(0)
 
 def guess_key():
-    character = "abcdefghijklmnoprstuwxyz"
+    character = "abcdefghijklmnoprstuwvxyz"
     character_list = list(character)
     """
        character_list is an array containing letters from a-z. This is needed to be able to draw letters at a later stage.
