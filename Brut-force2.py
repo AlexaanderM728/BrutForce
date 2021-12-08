@@ -5,6 +5,7 @@ import random
 from Crypto.Cipher import DES
 from Crypto.Util.Padding import pad
 import sys
+from multiprocessing import Process
 BLOCK_SIZE = 32
 """
     msg is varaible that stores encrypted message
@@ -66,7 +67,25 @@ def guess_key():
             else:
                 stop(key, ccrack)
         except:
-            print(key,":Wrong key to encode message")
+            print(key, ":Wrong key to encode message")
+"""
+mulirporccesing guess_key function
+"""
+def main():
+    p1 = Process(target=guess_key())
+    p1.start()
+
+    p2 = Process(target=guess_key())
+    p2.start()
+
+    p3 = Process(target=guess_key())
+    p3.start()
+
+    p1.join()
+    p2.join()
+    p3.join()
+
 
 """start brute-force"""
-guess_key()
+if __name__ == '__main__':
+    main()
