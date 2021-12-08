@@ -29,7 +29,7 @@ def guess_key():
         """
         try:
             des = DES.new(guess.encode('ascii'), DES.MODE_ECB)
-            mess = des.decrypt(des.decrypt(msg))
+            mess = des.decrypt(msg)
             print(mess.decode('UTF-8'))
         except:
             print("Wrong key to encode message")
