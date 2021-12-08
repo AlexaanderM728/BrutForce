@@ -1,7 +1,7 @@
 # Zuzanna Borkowska (s21243) Aleksander Mazurek (s15230)
 import random
 from Crypto.Cipher import DES
-
+from multiprocessing import Process
 """
     msg is varaible that stores encrypted message
 """
@@ -34,6 +34,23 @@ def guess_key():
         except:
             print("Wrong key to encode message")
 """
-Below the function is called
+mulirporccesing guess_key function
 """
-guess_key()
+def main():
+    p1 = Process(target=guess_key())
+    p1.start()
+
+    p2 = Process(target=guess_key())
+    p2.start()
+
+    p3 = Process(target=guess_key())
+    p3.start()
+
+    p1.join()
+    p2.join()
+    p3.join()
+
+
+"""start brute-force"""
+if __name__ == '__main__':
+    main()
